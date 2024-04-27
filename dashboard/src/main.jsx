@@ -1,11 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import SideBar from './sidebar.jsx'
 import Welcome from './welcome.jsx'
-import Profile from './profile.jsx'
+import Profile from './parkProfile.jsx'
+import UserProfile from './userProfile.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Profile />
+    {/* <SideBar /> */}
+    <Welcome />
+    {/* <Profile /> */}
+    {/* <UserProfile /> */}
   </React.StrictMode>,
 )
