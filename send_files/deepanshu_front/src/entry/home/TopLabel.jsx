@@ -8,54 +8,54 @@ const navItems = [
   { label: "Contact", href: "/contact" },
 ];
 
-const LandNavItem = ({ label, href }) => (
+const NavItem = ({ label, href }) => (
   <li>
-    <a href={href} className="land-nav-link">
+    <a href={href} className="nav-link">
       {label}
     </a>
   </li>
 );
 
-const LandTopHeader = () => (
-  <header className="land-top-header">
-    <div className="land-top-header-content">
-      <h1 className="brand-logo">ParkAI</h1>
+const Header = () => (
+  <header className="header">
+    <div className="header-content">
+      <h1 className="logo">ParkAI</h1>
       <nav>
-        <ul className="land-nav-list">
+        <ul className="nav-list">
           {navItems.map((item) => (
-            <LandNavItem key={item.label} {...item} />
+            <NavItem key={item.label} {...item} />
           ))}
         </ul>
       </nav>
-      <div className="land-top-header-actions">
-      <button className="land-login-btn">
+      <div className="header-actions">
+      <button className="login-btn">
           Login
         </button>
-        <button className="land-signup-btn">
+        <button className="signup-btn">
           Sign up
         </button>
       </div>
     </div>
-    <hr className="land-top-header-divider" />
+    <hr className="header-divider" />
   </header>
 );
 
-const LandWelcome = () => (
-  <section className="land-welcome">
-    <div className="land-welcome-content">
-      <div className="land-welcome-text">
-        <h2 className="land-welcome-title">
+const Hero = () => (
+  <section className="hero">
+    <div className="hero-content">
+      <div className="hero-text">
+        <h2 className="hero-title">
           <span>Manage your parking space</span>
         </h2>
-        <div className="land-welcome-subtitle">
+        <div className="hero-subtitle">
           <p>Experience seamless parking</p>
           <p>management</p>
         </div>
-        <div className="land-welcome-btn">
-          <button className="land-welcome-btn"> Get started </button>
+        <div className="hero-btn">
+          <button className="cta-btn"> Get started </button>
         </div>
       </div>
-      <div className="land-welcome-image">
+      <div className="hero-image">
         <img src="../images/park_system.png" />
       </div>
     </div>
@@ -65,13 +65,13 @@ const LandWelcome = () => (
 function TopLabel() {
   return (
     <>
-      <div className="land-container">
-        <LandTopHeader />
-        <LandWelcome />
+      <div className="container">
+        <Header />
+        <Hero />
       </div>
 
       <style jsx>{`
-        .land-container {
+        .container {
           background-color: #f0f0f0;
           box-shadow: 0 0 0 rgba(0, 0, 0, 0.08);
           align-self: stretch;
@@ -81,7 +81,7 @@ function TopLabel() {
         }
 
         @media (max-width: 990px) {
-          .land-container {
+          .container {
             display: flex;
             width: 100%;
             flex-direction: column;
@@ -89,7 +89,7 @@ function TopLabel() {
           }
         }
 
-        .land-top-header {
+        .header {
           display: flex;
           margin-bottom: 65px;
           width: 100%;
@@ -97,13 +97,13 @@ function TopLabel() {
         }
 
         @media (max-width: 991px) {
-          .land-top-header {
+          .header {
             max-width: 100%;
             margin-bottom: 40px;
           }
         }
 
-        .land-top-header-content {
+        .header-content {
           background-color: #fff;
           box-shadow: 0 0 0 rgba(0, 0, 0, 0.08);
           display: flex;
@@ -114,20 +114,20 @@ function TopLabel() {
         }
 
         @media (max-width: 991px) {
-          .land-top-header-content {
+          .header-content {
             max-width: 100%;
             flex-wrap: wrap;
             gap: 20px;
           }
         }
 
-        .brand-logo {
+        .logo {
           font: 700 32px Poppins, sans-serif;
           color: #030303;
           margin: 0;
         }
 
-        .land-nav-list {
+        .nav-list {
           display: flex;
           gap: 20px;
           list-style: none;
@@ -136,22 +136,30 @@ function TopLabel() {
         }
 
         @media (max-width: 991px) {
-          .land-nav-list {
+          .nav-list {
             flex-wrap: wrap;
           }
         }
 
-        .land-nav-link {
+        .nav-link {
           font-family: Poppins, sans-serif;
           color: #030303;
           text-decoration: none;
         }
 
-        .land-top-header-actions {
+        .header-actions {
           display: flex;
         }
 
-        .land-signup-btn {
+        .avatar {
+          width: 40px;
+          height: 40px;
+          
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .signup-btn {
           position: relative;
           font-family: Poppins, sans-serif;
           font-weight: 700;
@@ -163,7 +171,7 @@ function TopLabel() {
           overflow: hidden;
         }
 
-        .land-login-btn {
+        .login-btn {
           position: relative;
           font-family: Poppins, sans-serif;
           font-weight: 700;
@@ -175,11 +183,11 @@ function TopLabel() {
         }
 
         @media (max-width: 991px) {
-          .land-signup-btn {
+          .signup-btn {
             padding: 15px 30px;
           }
 
-          .land-login-btn {
+          .login-btn {
             padding: 15px 30px;
           }
         }
@@ -193,44 +201,44 @@ function TopLabel() {
           z-index: -1;
         }
 
-        .land-top-header-divider {
+        .header-divider {
           background-color: #f0f0f0;
           border: none;
           height: 1px;
           margin: 30px 0 0;
         }
 
-        .land-welcome {
+        .hero {
           margin-top: 40px;
         }
 
         @media (max-width: 991px) {
-          .land-welcome {
+          .hero {
             margin-top: 40px;
           }
         }
 
-        .land-welcome-content {
+        .hero-content {
           display: flex;
           gap: 20px;
         }
 
         @media (max-width: 991px) {
-          .land-welcome-content {
+          .hero-content {
             flex-direction: column;
           }
         }
 
-        .land-welcome-text {
+        .hero-text {
           flex: 1;
         }
 
-        .land-welcome-image{
+        .hero-image{
           height: fit-content;
           width: fit-content !important;
         }
 
-        .land-welcome-title {
+        .hero-title {
           padding-left: 20px;
           font: 700 52px/1.2 Poppins, sans-serif !important;
           color: #030303;
@@ -238,16 +246,16 @@ function TopLabel() {
         }
 
         @media (max-width: 991px) {
-          .land-welcome-title {
+          .hero-title {
             font-size: 40px !important;
           }
         }
 
-        .land-welcome-title span {
+        .hero-title span {
           display: block !important;
         }
 
-        .land-welcome-subtitle {
+        .hero-subtitle {
           padding-left: 20px;
           font: 400 24px Poppins, sans-serif;
           color: #030303;
@@ -255,25 +263,25 @@ function TopLabel() {
         }
 
         @media (max-width: 991px) {
-          .land-welcome-subtitle {
+          .hero-subtitle {
             margin-top: 30px;
           }
         }
 
-        .land-welcome-subtitle p {
+        .hero-subtitle p {
           margin: 0;
         }
 
-        .land-welcome-subtitle p + p {
+        .hero-subtitle p + p {
           margin-top: 10px;
         }
 
-        .land-welcome-btn{
+        .hero-btn{
           margin: 50px 0 0;
           padding-left: 20px;
         }
 
-        .land-welcome-btn {
+        .cta-btn {
           position: relative;
           font: 700 16px Poppins, sans-serif;
           color: #fff;
@@ -287,20 +295,29 @@ function TopLabel() {
         }
 
         @media (max-width: 991px) {
-          .land-welcome-btn {
+          .cta-btn {
             margin-top: 30px;
             margin-bottom : 15px;
             padding: 20px 40px;
           }
         }
 
-        .land-welcome-img {
+        .cta-bg {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: -1;
+        }
+
+        .hero-img {
           width: 40%;
           object-fit: contain;
         }
 
         @media (max-width: 991px) {
-          .land-welcome-img {
+          .hero-img {
             width: 100%;
             margin-top: 30px;
           }

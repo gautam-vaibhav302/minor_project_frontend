@@ -4,16 +4,16 @@ import SideBar from "./sidebar";
 function InputField({ label, value, onChange, inType, id }) {
   return (
     <>
-      <div className="input-field">
+      <div className="own-profile-input-field">
         <div className="input-label">
           {label}
         </div>
-        <div className="input-value" >
-          <input type={inType} name={id} id={id} className="input-box" />
+        <div className="own-profile-input-value" >
+          <input type={inType} name={id} id={id} className="own-profile-input-box" />
         </div>
       </div>
       <style jsx>{`
-        .input-field {
+        .own-profile-input-field {
           width : max-content;
           display: flex;
           gap: 11px;
@@ -23,7 +23,7 @@ function InputField({ label, value, onChange, inType, id }) {
           flex-grow: 1;
           margin: auto 0;
         }
-        .input-value {
+        .own-profile-input-value {
           align-items : center;
           border-radius: 5px;
           background-color: #d9d9d9;
@@ -31,7 +31,7 @@ function InputField({ label, value, onChange, inType, id }) {
           height: 2rem;
         }
 
-        .input-box{
+        .own-profile-input-box{
           text-align : center;
           background : transparent;
           font-family : inherit;
@@ -44,7 +44,7 @@ function InputField({ label, value, onChange, inType, id }) {
         }
 
         @media(max-width : 991px){
-          .input-field{
+          .own-profile-input-field{
             margin : 5% auto;
             width : 100%;
           }
@@ -57,18 +57,18 @@ function InputField({ label, value, onChange, inType, id }) {
 function DocCards({ imgSrc, cardDesc, id }) {
   return (
     <>
-      <div className="card-container">
-        <img src={imgSrc} alt="Profile Photo" className="card-photo" />
-        <div className="card-footer">
-          <div className="card-desc">{cardDesc}</div>
-          <div className="card-button">
+      <div className="own-profile-card-container">
+        <img src={imgSrc} alt="Profile Photo" className="own-profile-card-photo" />
+        <div className="own-profile-card-footer">
+          <div className="own-profile-card-desc">{cardDesc}</div>
+          <div className="own-profile-card-button">
             <input type={"file"} name={id} id={id} hidden />
-            <label htmlFor={id} className="submit-input">Upload</label>
+            <label htmlFor={id} className="own-profile-submit-input">Upload</label>
           </div>
         </div>
       </div>
       <style jsx>{`
-        .card-container {
+        .own-profile-card-container {
           align-self: flex-start;
           align-items : flex-start;
           display: flex;
@@ -80,11 +80,11 @@ function DocCards({ imgSrc, cardDesc, id }) {
           font-weight : 600;
         }
         @media (max-width: 991px) {
-          .card-container {
+          .own-profile-card-container {
             margin-top: 40px;
           }
         }
-        .card-photo {
+        .own-profile-card-photo {
           aspect-ratio: 1.56;
           object-fit: cover;
           object-position: center;
@@ -92,18 +92,18 @@ function DocCards({ imgSrc, cardDesc, id }) {
           background : #f0f0f0;
           border-radius : 10px;
         }
-        .card-footer {
+        .own-profile-card-footer {
           display: flex;
           margin : 5% auto;
           gap: 1.25rem;
         }
-        .card-desc {
+        .own-profile-card-desc {
           color: #fff;
           font-family: Manrope, sans-serif;
           flex-grow: 1;
           margin: auto 0;
         }
-        .card-button {
+        .own-profile-card-button {
           font-family: Manrope, sans-serif;
           border-radius: 5px;
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -116,7 +116,7 @@ function DocCards({ imgSrc, cardDesc, id }) {
           align-items : center;
         }
         @media (max-width: 991px) {
-          .card-button {
+          .own-profile-card-button {
             white-space: initial;
             padding: 0 20px;
           }
@@ -129,12 +129,12 @@ function DocCards({ imgSrc, cardDesc, id }) {
 function AddressField(pos) {
   return (
     <>
-      <div className="extended-column">
-        <div className="country-address-fields">
-          <div className="address-field">
-            <div className="address-label">Address</div>
-            <div className="address-input" >
-              <textarea type="text" name="address" id="address" className="input-box" />
+      <div className="own-profile-doc_info-extended-column">
+        <div className="country-own-profile-address-fields">
+          <div className="own-profile-address-field">
+            <div className="own-profile-address-label">Address</div>
+            <div className="own-profile-address-input" >
+              <textarea type="text" name="address" id="address" className="own-profile-input-box" />
             </div>
           </div>
         </div>
@@ -152,13 +152,13 @@ function Profile() {
 
   return (
     <>
-      <section className="main-page">
+      <section className="dash-page">
         <SideBar />
-        <div className="container">
-          <h1 className="title">Edit Profile</h1>
-          <div className="profile-form-container">
-          <div className="profile-form">
-              <div className="input-fields">
+        <div className="dash-container">
+          <h1 className="dash-title">Edit Profile</h1>
+          <div className="own-profile-form-container">
+          <div className="own-profile-form">
+              <div className="own-profile-input-fields">
                 {inputFields.map((field, index) => (
                   <InputField
                     key={index}
@@ -170,61 +170,61 @@ function Profile() {
                   />
                 ))}
               </div>
-            <div className="additional-info">
-              <div className="info-columns">
-                <div className="column">
-                  <div className="column-fields">
-                    <div className="phone-field">
-                      <div className="phone-label">Phone</div>
-                      <div className="input-value" >
-                        <div className="input-value" >
-                          <input type="tel" name="phone" id="phone" className="input-box" />
+            <div className="own-profile-additional-info">
+              <div className="own-profile-info-columns">
+                <div className="own-profile-column">
+                  <div className="own-profile-column-fields">
+                    <div className="own-profile-phone-field">
+                      <div className="own-profile-phone-label">Phone</div>
+                      <div className="own-profile-input-value" >
+                        <div className="own-profile-input-value" >
+                          <input type="tel" name="phone" id="phone" className="own-profile-input-box" />
                         </div>
                       </div>
                     </div>
-                    <div className="city-field">
-                      <div className="city-label">City</div>
-                      <div className="input-value" >
-                        <input type="text" name="city" id="city" className="input-box" />
+                    <div className="own-profile-city-field">
+                      <div className="own-profile-city-label">City</div>
+                      <div className="own-profile-input-value" >
+                        <input type="text" name="city" id="city" className="own-profile-input-box" />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="column">
+                <div className="own-profile-column">
 
-                  <div className="extended-column">
-                    <div className="country-field">
-                      <div className="country-label">Country</div>
-                      <div className="input-value" >
-                        <input type="text" name="country" id="country" className="input-box" />
+                  <div className="own-profile-doc_info-extended-column">
+                    <div className="own-profile-country-field">
+                      <div className="own-profile-country-label">Country</div>
+                      <div className="own-profile-input-value" >
+                        <input type="text" name="country" id="country" className="own-profile-input-box" />
                       </div>
                     </div>
 
-                    <div className="state-field">
+                    <div className="own-profile-state-field">
                       <div className="state-label">State</div>
-                      <div className="input-value" >
-                        <input type="text" name="state" id="state" className="input-box" />
+                      <div className="own-profile-input-value" >
+                        <input type="text" name="state" id="state" className="own-profile-input-box" />
                       </div>
                     </div>
 
                   </div>
 
-                  <div className="extended-column">
-                    <div className="address-field">
-                      <div className="address-label">Address</div>
-                      <div className="address-input" >
-                        <textarea type="text" name="address" id="address" className="input-box" />
+                  <div className="own-profile-doc_info-extended-column">
+                    <div className="own-profile-address-field">
+                      <div className="own-profile-address-label">Address</div>
+                      <div className="own-profile-address-input" >
+                        <textarea type="text" name="address" id="address" className="own-profile-input-box" />
                       </div>
                     </div>
                   </div>
                 </div>
 
               </div>
-              <div className="doc-info">
+              <div className="own-profile-doc-info">
                 <DocCards imgSrc={"images/addImage.png"} cardDesc={"Profile Photo"} id={"proPic"} />
                 <DocCards imgSrc={"images/addFile.png"} cardDesc={"ID Proof"} id="idProof" />
-                <div className="submit-field">
-                  <button type={"submit"} className="submit-input">Submit</button>
+                <div className="own-profile-submit-field">
+                  <button type={"submit"} className="own-profile-submit-input">Submit</button>
                 </div>
               </div>
             </div>
@@ -233,30 +233,30 @@ function Profile() {
         </div>
       </section>
       <style jsx>{`
-        .main-page{
+        .dash-page{
           width : fit-content;
           display : flex;
         }
 
         @media (max-width : 767px){
-          .main-page{
+          .dash-page{
             flex-direction : column;
           }
         }
 
-        .container {
+        .dash-container {
           background-color: #fff;
           display: flex;
           flex-direction: column;
           padding: 44px 50px 76px;
         }
         @media (max-width: 991px) {
-          .container {
+          .dash-container {
             padding: 0 20px;
           }
         }
 
-        .title {
+        .dash-title {
           color: #000;
           margin : 0 0 02.5%;
           width : fit-content;
@@ -264,21 +264,21 @@ function Profile() {
         }
 
         @media (max-width: 991px) {
-          .title {
+          .dash-title {
             max-width: 100%;
             margin-right: 10px;
             font-size: 40px;
           }
         }
         
-        .profile-form-container{
+        .own-profile-form-container{
           display : flex;
           flex-direction : column;
           height : 100%;
           width : 100%;
         }
 
-        .profile-form {
+        .own-profile-form {
           box-shadow : 0 5px 10px 2.5px grey, 
                        5px 0 10px 2.5px grey, 
                        0 -1px 3px 1px grey, 
@@ -294,7 +294,7 @@ function Profile() {
         }
 
         @media (max-width: 991px) {
-          .profile-form {
+          .own-profile-form {
             height : 86% !important;
             max-width: 100%;
             margin-top: 40px;
@@ -304,7 +304,7 @@ function Profile() {
         }
 
         @media (max-width: 767px) {
-          .profile-form {
+          .own-profile-form {
             height : 86% !important;
             max-width: 100%;
             margin : 25% auto;
@@ -317,7 +317,7 @@ function Profile() {
           flex-direction : row;
         }
 
-        .input-fields {
+        .own-profile-input-fields {
           display: flex;
           width: 100%;
           align-items: start;
@@ -328,7 +328,7 @@ function Profile() {
           justify-content: center;
         }
         @media (max-width: 991px) {
-          .input-fields {
+          .own-profile-input-fields {
             display : grid;
             grid-template-columns : 1fr 1fr;
             grid-template-rows : 1fr 1fr;
@@ -338,16 +338,16 @@ function Profile() {
             justify-content : space-between;
           }
         }
-        .additional-info {
+        .own-profile-additional-info {
           margin-top: 47px;
         }
         @media (max-width: 991px) {
-          .additional-info {
+          .own-profile-additional-info {
             max-width: 100%;
             margin-top: 0;
           }
         }
-        .info-columns {
+        .own-profile-info-columns {
           display: flex;
           justify-content : flex-start;
           gap: 9%;
@@ -355,14 +355,14 @@ function Profile() {
           margin-bottom : 3%;
         }
         @media (max-width: 991px) {
-          .info-columns {
+          .own-profile-info-columns {
             flex-direction: column;
             align-items: stretch;
             gap: 3%;
             padding-left : 1%;
           }
         }
-        .column {
+        .own-profile-column {
           display: flex;
           flex-direction: column;
           line-height: normal;
@@ -370,12 +370,12 @@ function Profile() {
           margin-left: 0;
         }
         @media (max-width: 991px) {
-          .column {
+          .own-profile-column {
             width: 100%;
           }
         }
 
-        .extended-column {
+        .own-profile-doc_info-extended-column {
           display: flex;
           gap : 13%;
           flex-direction: row;
@@ -385,23 +385,23 @@ function Profile() {
         }
 
         @media (max-width: 1317px){
-          .extended-column {
+          .own-profile-doc_info-extended-column {
            flex-direction : column;
           }
 
-          .state-field{
+          .own-profile-state-field{
             margin-top : 5%;
             margin-left : 3% !important;
           }
 
-          .profile-form{
+          .own-profile-form{
             height : 86% !important;
             width : 115%;
           }
         }
 
         @media (max-width: 991px) {
-          .extended-column {
+          .own-profile-doc_info-extended-column {
             margin-top : 5%;
             flex-direction : row;
             width: 85%;
@@ -409,7 +409,7 @@ function Profile() {
           }
         }
 
-        .column-fields {
+        .own-profile-column-fields {
           display: flex;
           flex-grow: 1;
           flex-direction: column;
@@ -417,7 +417,7 @@ function Profile() {
           font-weight: 600;
         }
         @media (max-width: 991px) {
-          .column-fields {
+          .own-profile-column-fields {
             width: 100%;
             flex-direction : row;
             max-width : 100%;
@@ -425,7 +425,7 @@ function Profile() {
           }
         }
 
-        .phone-field {
+        .own-profile-phone-field {
           display: flex;
           gap: 15%;
           width : 120%;
@@ -433,7 +433,7 @@ function Profile() {
           white-space: nowrap;
         }
         @media (max-width: 991px) {
-          .phone-field {
+          .own-profile-phone-field {
             align-items : center;
             max-width: 100%;
             flex-direction : row;
@@ -442,7 +442,7 @@ function Profile() {
           }
         }
 
-        .phone-label {
+        .own-profile-phone-label {
           font-family: Manrope, sans-serif;
           margin: auto 0;
         }
@@ -453,7 +453,7 @@ function Profile() {
           height: 33px;
         }
 
-        .city-field {
+        .own-profile-city-field {
           display: flex;
           margin-top: 17%;
           width : 118%;
@@ -462,7 +462,7 @@ function Profile() {
           white-space: nowrap;
         }
 
-        .city-label {
+        .own-profile-city-label {
           font-family: Manrope, sans-serif;
           margin: auto 0;
         }
@@ -475,7 +475,7 @@ function Profile() {
         }
 
         @media (max-width: 991px) {
-          .city-field {
+          .own-profile-city-field {
             width: 100%;
             gap : 13%;
             padding-right: 20px;
@@ -485,22 +485,22 @@ function Profile() {
         }
 
         @media(max-width : 767px){
-          .column-fields{
+          .own-profile-column-fields{
             gap : 12%;
           }
 
-          .phone-field{
+          .own-profile-phone-field{
             padding-right : 5%;
             gap : 20% !important;
           }
 
-          .phone-field{
+          .own-profile-phone-field{
             padding-right : 5%;
             gap : 13%;
           }
         }
 
-        .country-field {
+        .own-profile-country-field {
           display: flex;
           flex-direction: row;
           white-space  nowrap;
@@ -513,13 +513,13 @@ function Profile() {
         }
 
         @media (max-width: 991px) {
-          .country-field {
+          .own-profile-country-field {
             gap : 16%;
             padding-right: 20px;
             white-space: initial;
           }
         }
-        .country-label {
+        .own-profile-country-label {
           font-family: Manrope, sans-serif;
           flex-grow: 1;
           margin: auto 0;
@@ -530,7 +530,7 @@ function Profile() {
           width: 12rem;
           height: 2rem;
         }
-        .address-field {
+        .own-profile-address-field {
           display: flex;
           margin-top: 3.5%;
           gap: 20px;
@@ -541,20 +541,20 @@ function Profile() {
           white-space: nowrap;
         }
         @media (max-width: 991px) {
-          .address-field {
+          .own-profile-address-field {
             margin-top: 0;
             width : fit-content;
             gap : 11%;
             white-space: initial;
           }
         }
-        .address-label {
+        .own-profile-address-label {
           font-family: Manrope, sans-serif;
           align-self: start;
           flex-grow: 1;
           margin-top : 9%;
         }
-        .address-input {
+        .own-profile-address-input {
           border-radius: 5px;
           background-color: #d9d9d9;
           width: 20rem;
@@ -565,7 +565,7 @@ function Profile() {
           resize : none;
         }
 
-        .state-field {
+        .own-profile-state-field {
           display: flex;
           gap: 17%;
           font-size: 20px;
@@ -575,7 +575,7 @@ function Profile() {
           white-space: nowrap;
         }
         @media (max-width: 991px) {
-          .state-field {
+          .own-profile-state-field {
             gap : 14%;
             align-items : center;
             margin : 0;
@@ -594,14 +594,14 @@ function Profile() {
           height: 33px;
         }
 
-        .doc-info{
+        .own-profile-doc-info{
           display : flex;
           flex-direction : row;
           justify-content : space-evenly;
         }
 
         @media(max-width : 991px){
-          .doc-info{
+          .own-profile-doc-info{
             display : grid;
             grid-template-columns : 1fr 1fr;
             grid-row-gap : 7%;
@@ -610,16 +610,16 @@ function Profile() {
         }
 
         @media(max-width : 767px){
-          .doc-info{
+          .own-profile-doc-info{
             padding-bottom : 5%;
           }
 
-          .card-container{
+          .own-profile-card-container{
             margin-top : 0;
           }
         }
 
-        .submit-field{
+        .own-profile-submit-field{
           height : fit-content;
           align-self : flex-end;
           font-family: Manrope, sans-serif;
@@ -633,7 +633,7 @@ function Profile() {
           margin-bottom : 2%;
         }
 
-        .submit-input{
+        .own-profile-submit-input{
           font-family: Manrope, sans-serif;
           border : none;
           font-size : 1.2rem;
@@ -643,7 +643,7 @@ function Profile() {
         }
 
         @media(max-width : 991px){
-          .submit-field{
+          .own-profile-submit-field{
             justify-self : center;
             align-self : center;
             width : fit-content;

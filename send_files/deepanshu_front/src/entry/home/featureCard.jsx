@@ -1,8 +1,8 @@
 import * as React from "react";
 
-const LandCardStyles = () => (
+const CardStyles = () => (
   <style jsx>{`
-        .land-feature-section {
+        .feature-section {
           max-width: 780px;
           width: 100%;
           margin: 50px auto;
@@ -12,7 +12,7 @@ const LandCardStyles = () => (
         }
 
         @media (max-width: 991px) {
-          .land-feature-section {
+          .feature-section {
             max-width: 100%;
             margin-top: 30px;
             flex-direction: column;
@@ -153,7 +153,7 @@ const LandCardStyles = () => (
 function Card() {
   return (
     <>
-      <section className="land-feature-section">
+      <section className="feature-section">
         <div className="feature-content">
           <div className="feature-text">
             <h2 className="feature-title">Effortless parking made possible</h2>
@@ -174,10 +174,10 @@ function Card() {
           />
         </div>
 
-        <LandCardStyles />
+        <CardStyles />
       </section>
 
-      <section className="land-feature-section-2">
+      <section className="feature-section-2">
       <div className="feature-image-container feature-image-container-2b">
           <img
             src="../images/card1_photo.png"
@@ -204,10 +204,10 @@ function Card() {
           />
         </div>
 
-        <LandCardStyles />
+        <CardStyles />
 
         <style jsx>{`
-        .land-feature-section-2{
+        .feature-section-2{
           max-width: 780px;
           width: 100%;
           margin: 50px auto;
@@ -217,7 +217,7 @@ function Card() {
         }
 
         @media (max-width: 991px) {
-          .land-feature-section-2 {
+          .feature-section-2 {
             max-width: 100%;
             margin-top: 30px;
             flex-direction: column;
@@ -300,7 +300,7 @@ function Card() {
       `}</style>
       </section>
 
-      <section className="land-feature-section">
+      <section className="feature-section">
         <div className="feature-content">
           <div className="feature-text">
             <h2 className="feature-title">Tailored solutions for every parking need</h2>
@@ -320,7 +320,7 @@ function Card() {
           />
         </div>
 
-        <LandCardStyles />
+        <CardStyles />
       </section>
     </>
   );

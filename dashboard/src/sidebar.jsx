@@ -2,43 +2,43 @@ import * as React from "react";
 import { useState } from "react";
 
 function IconImage({ src, alt }) {
-  return <img loading="lazy" src={src} alt={alt} className="icon-image" />;
+  return <img loading="lazy" src={src} alt={alt} className="sidebar-icon-image" />;
 }
 
-function MenuItem({ icon, label, onClick }) {
+function SideMenuItem({ icon, label, onClick }) {
   return (
-    <div className="menu-item" onClick={onClick}>
+    <div className="side-menu-item" onClick={onClick}>
       <IconImage src={icon} alt="" />
-      <div className="menu-label">{label}</div>
+      <div className="side-menu-label">{label}</div>
     </div>
   );
 } 
 
-function ProfileSection() {
+function SideProfileSection() {
   return (
-    <div className="profile-section">
+    <div className="side-profile-section">
 
-      <div className="profile-header">
+      <div className="side-profile-header">
         <IconImage src="logos/profile.png" alt="" />
-        <div className="settings-label">Profile</div>
+        <div className="side-settings-label">Profile</div>
       </div>
 
-      <div className="profile-info">
+      <div className="side-profile-info">
         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a4b920a5ff3464d5a591fb8d6e32799cf458142691723826b998a975a8f70888?apiKey=185221ab61634e7baa33e5b4261af8f5&" alt="Profile picture of John Smith" />
         <div className="profile-details">
-          <div className="profile-name">John Smith</div>
-          <div className="profile-email">johnsmith@email.com</div>
+          <div className="side-profile-name">John Smith</div>
+          <div className="side-profile-email">johnsmith@email.com</div>
         </div>
       </div>
 
-      <div className="profile-settings">
+      <div className="side-profile-settings">
         <IconImage src="logos/settings.png" alt="" />
-        <div className="settings-label">Settings</div>
+        <div className="side-settings-label">Settings</div>
       </div>
 
-      <div className="profile-settings">
+      <div className="side-profile-settings">
         <IconImage src="logos/logout.png" alt="" />
-        <div className="settings-label">Sign Out</div>
+        <div className="side-settings-label">Sign Out</div>
       </div>
 
     </div>
@@ -55,7 +55,7 @@ function SideBar() {
   return (
     <>
 
-      <div className={`app-container`}>
+      <div className={`sidebar-container`}>
 
         <div className="sidehead" onClick={toggleSidebar}>
           <img src={"https://cdn.builder.io/api/v1/image/assets/TEMP/e97864e041db41bc26ee1f82706998cd3701f3dace2016e101fbca5f0d4cbf38?apiKey=185221ab61634e7baa33e5b4261af8f5&"} alt="" className="sidehead-logo" />
@@ -66,21 +66,21 @@ function SideBar() {
 
           <div className="sidebar-menu">
 
-            <MenuItem icon="logos/editProfile.png" label="Edit Profile" />
+            <SideMenuItem icon="logos/editProfile.png" label="Edit Profile" />
 
-            <MenuItem icon="logos/editParking.png" label="Edit Parking" />
+            <SideMenuItem icon="logos/editParking.png" label="Edit Parking" />
 
-            <MenuItem icon="logos/fillSlot.png" label="Fill Slot" />
+            <SideMenuItem icon="logos/fillSlot.png" label="Fill Slot" />
 
-            <MenuItem icon="logos/freeSlot.png" label="Free Slot" />
+            <SideMenuItem icon="logos/freeSlot.png" label="Free Slot" />
 
-            <MenuItem icon="logos/viewParking.png" label="View Parking" />
+            <SideMenuItem icon="logos/viewParking.png" label="View Parking" />
 
           </div>
 
-          <div className="profile-divider"> </div>
+          <div className="side-profile-divider"> </div>
 
-          <ProfileSection />
+          <SideProfileSection />
 
         </nav>
       </div>
@@ -91,7 +91,7 @@ function SideBar() {
           margin: 0;
         }
 
-        .app-container {
+        .sidebar-container {
           box-shadow: 0px 0px 2px 0px rgba(23, 26, 31, 0.12),
             0px 0px 1px 0px rgba(23, 26, 31, 0.07);
           background-color: #f0f0f0;
@@ -100,16 +100,16 @@ function SideBar() {
         }
 
         @media (max-width: 767px) {
-          .app-container{
+          .sidebar-container{
             width : 100%;
           }
 
-          .app-container.sidebar-open {
+          .sidebar-container.sidebar-open {
             overflow: hidden;
           }
         }
 
-        .profile-divider{
+        .side-profile-divider{
           display : flex;
           width : 100%;
           max-width : 375px;
@@ -148,7 +148,7 @@ function SideBar() {
           }
         }
 
-        .menu-item {
+        .side-menu-item {
           margin : 5%;
           display: flex;
           gap: 12px;
@@ -162,7 +162,7 @@ function SideBar() {
         }
 
         @media(max-width : 767px){
-          .menu-item{
+          .side-menu-item{
             margin : auto 0;
           }
         }
@@ -223,12 +223,12 @@ function SideBar() {
           height: auto;
         }
 
-        .icon-image {
+        .sidebar-icon-image {
           width: 20px;
           height: 20px;
         }
 
-        .menu-label {
+        .side-menu-label {
           font-family: Manrope, sans-serif;
         }
 
@@ -297,7 +297,7 @@ function SideBar() {
           font: 14px/157% Manrope, sans-serif;
         }
 
-        .profile-section {
+        .side-profile-section {
           display: flex;
           margin: 5% auto 25%;
           flex-direction: column;
@@ -305,13 +305,13 @@ function SideBar() {
         }
 
         @media (max-width: 767px) {
-          .profile-section {
+          .side-profile-section {
             margin: 5% 2%;
             padding-bottom : 7.5%;
           }
         }
 
-        .profile-info {
+        .side-profile-info {
           display: flex;
           gap: 12px;
           align-items: center;
@@ -329,18 +329,18 @@ function SideBar() {
           margin-top: 7px;
         }
 
-        .profile-name {
+        .side-profile-name {
           color: #9095a1;
           font: 14px/157% Manrope, sans-serif;
         }
 
-        .profile-email {
+        .side-profile-email {
           color: #171a1f;
           margin-top: 11px;
           font: 13px/169% Manrope, sans-serif;
         }
 
-        .profile-settings {
+        .side-profile-settings {
           display: flex;
           gap: 16px;
           align-items: center;
@@ -350,7 +350,7 @@ function SideBar() {
           margin: 10% 5%;
         }
 
-        .profile-header {
+        .side-profile-header {
           display: flex;
           gap: 16px;
           align-items: center;
@@ -362,16 +362,16 @@ function SideBar() {
         }
 
         // @media (max-width: 767px) {
-        //   .profile-settings {
+        //   .side-profile-settings {
         //     margin: 40px 0 0 10px;
         //   }
 
-        //   .profile-header {
+        //   .side-profile-header {
         //     margin: 40px 0 0 10px;
         //   }
         // }
 
-        .settings-label {
+        .side-settings-label {
           font-family: Manrope, sans-serif;
         }
 

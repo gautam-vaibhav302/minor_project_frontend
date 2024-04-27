@@ -3,21 +3,21 @@ import SideBar from "./sidebar";
 
 function WelcomeSection() {
   return (
-    <section className="welcome-section">
-      <div className="welcome-content">
-        <div className="welcome-text">
+    <section className="own-welcome-section">
+      <div className="own-welcome-content">
+        <div className="own-welcome-text">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/7d5fc20bff3c6a4104063047afd2f5d0b594bb5a8a23fd334a04aae7d2b114a3?apiKey=185221ab61634e7baa33e5b4261af8f5&"
-            className="welcome-image"
+            className="own-welcome-image"
             alt="Welcome to ParkPoint"
           />
         </div>
-        <div className="welcome-description">
-          <h4 className="description-heading">
+        <div className="own-welcome-description">
+          <h4 className="own-weclome-section-description-heading">
             Your personalized parking dashboard.
           </h4>
-          <h4 className="description-text">
+          <h4 className="own-weclome-section-description-text">
             Efficiently manage your parking spaces with just a few clicks. Take
             control of your slots, profile, and bookings seamlessly.
           </h4>
@@ -37,9 +37,9 @@ function FeatureList() {
   ];
 
   return (
-    <ul className="feature-list">
+    <ul className="weclome-feature-list">
       {features.map((feature, index) => (
-        <li key={index} className="feature-item">
+        <li key={index} className="weclome-feature-item">
           &gt; {feature}
         </li>
       ))}
@@ -49,16 +49,16 @@ function FeatureList() {
 
 function FeatureSection() {
   return (
-    <section className="feature-section">
-      <div className="feature-content">
+    <section className="own-weclome-feature-section">
+      <div className="own-weclome-feature-content">
         <div className="feature-text">
           <FeatureList />
         </div>
-        <div className="feature-image-container">
+        <div className="weclome-feature-image-container">
           <img
             loading="lazy"
-            src="images/parkwelcome2.png"
-            className="feature-image"
+            src="images/parkown-welcome2.png"
+            className="weclome-feature-image"
             alt="ParkPoint Features"
           />
         </div>
@@ -67,31 +67,31 @@ function FeatureSection() {
   );
 }
 
-function Welcome() {
+function WelcomePage() {
   return (
     <>
-      <section className="main-page">
+      <section className="dash-page">
         <SideBar />
-        <div className="welcome-container">
-          <div className="content-wrapper">
-            <h1 className="welcome-heading">Welcome to ParkPoint!</h1>
+        <div className="own-welcome-container">
+          <div className="own-weclome-content-wrapper">
+            <h1 className="own-welcome-heading">Welcome to ParkPoint!</h1>
             <WelcomeSection />
             <FeatureSection />
           </div>
         </div>
       </section>
       <style jsx>{`
-        .main-page{
+        .dash-page{
           display : flex;
         }
 
         @media (max-width : 767px){
-          .main-page{
+          .dash-page{
             flex-direction : column;
           }
         }
 
-        .welcome-container {
+        .own-welcome-container {
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
@@ -101,55 +101,55 @@ function Welcome() {
         }
 
         @media (max-width: 991px) {
-          .welcome-container {
+          .own-welcome-container {
             padding: 0 20px;
           }
         }
 
         @media (max-width: 767px) {
-          .welcome-container {
+          .own-welcome-container {
             margin-top : 10%;
           }
         }
 
-        .content-wrapper {
+        .own-weclome-content-wrapper {
           width: 100%;
           max-width: 1340px;
         }
 
         @media (max-width: 991px) {
-          .content-wrapper {
+          .own-weclome-content-wrapper {
             max-width: 100%;
           }
         }
 
-        .welcome-section {
+        .own-welcome-section {
           display: flex;
           gap: 20px;
         }
 
         @media (max-width: 991px) {
-          .welcome-section {
+          .own-welcome-section {
             flex-direction: column;
             align-items: stretch;
             gap: 0;
           }
         }
 
-        .welcome-content {
+        .own-welcome-content {
           display: flex;
           gap: 5%;
         }
 
         @media (max-width: 991px) {
-          .welcome-content {
+          .own-welcome-content {
             flex-direction: column;
             align-items: stretch;
             gap: 0;
           }
         }
 
-        .welcome-text {
+        .own-welcome-text {
           padding : 2%;
           display: flex;
           flex-direction: column;
@@ -158,12 +158,12 @@ function Welcome() {
         }
 
         @media (max-width: 991px) {
-          .welcome-text {
+          .own-welcome-text {
             width: 100%;
           }
         }
 
-        .welcome-heading {
+        .own-welcome-heading {
           margin : auto;
           font-size: 48px;
           font-weight: 600;
@@ -172,27 +172,27 @@ function Welcome() {
         }
 
         @media (max-width: 991px) {
-          .welcome-heading {
+          .own-welcome-heading {
             max-width: 100%;
             margin-top: 40px;
             font-size: 40px;
           }
         }
 
-        .welcome-image {
+        .own-welcome-image {
           align-self : flex-start;
           width: 100%;
           margin: 10% 2.5%;
         }
 
         @media (max-width: 991px) {
-          .welcome-image {
+          .own-welcome-image {
             width : 80%;
             margin-top: 40px;
           }
         }
 
-        .welcome-description {
+        .own-welcome-description {
           display: flex;
           flex-direction: column;
           min-width : 50%;
@@ -202,54 +202,54 @@ function Welcome() {
         }
 
         @media (max-width: 991px) {
-          .welcome-description {
+          .own-welcome-description {
             width: 100%;
           }
         }
 
-        .description-heading {
+        .own-weclome-section-description-heading {
           color: #000;
           font-size : 1.7rem;
           margin: 25% 2.5% 10%;
         }
 
         @media (max-width: 991px) {
-          .description-heading {
+          .own-weclome-section-description-heading {
             max-width: 100%;
             margin-top: 40px;
           }
         }
 
-        .description-text {
+        .own-weclome-section-description-text {
           margin: 15% 2.5% 10%;
           font-size : 1.5rem;
         }
 
         @media (max-width: 991px) {
-          .description-text {
+          .own-weclome-section-description-text {
             max-width: 100%;
             margin-top: 40px;
           }
         }
 
-        .feature-section {
+        .own-weclome-feature-section {
           margin-top: 8px;
           width: 100%;
         }
 
         @media (max-width: 991px) {
-          .feature-section {
+          .own-weclome-feature-section {
             max-width: 100%;
           }
         }
 
-        .feature-content {
+        .own-weclome-feature-content {
           display: flex;
           gap: 20px;
         }
 
         @media (max-width: 991px) {
-          .feature-content {
+          .own-weclome-feature-content {
             flex-direction: column;
             align-items: stretch;
             gap: 0;
@@ -271,7 +271,7 @@ function Welcome() {
           }
         }
 
-        .feature-list {
+        .weclome-feature-list {
           padding : 0;
           list-style-type : none;
           display: flex;
@@ -284,24 +284,24 @@ function Welcome() {
         }
 
         @media (max-width: 991px) {
-          .feature-list {
+          .weclome-feature-list {
             padding-left : 7.5%;
             margin-top: 40px;
           }
 
-          .feature-item{
+          .weclome-feature-item{
             margin : 5%;
             margin-left : 0;
           }
         }
 
-        .feature-item {
+        .weclome-feature-item {
           font-size : 1.35rem;
           align-self : flex-start;
           margin : 10% 5% 5% 0;
         }
 
-        .feature-image-container {
+        .weclome-feature-image-container {
           align-items : center;
           display: flex;
           flex-direction: row;
@@ -312,12 +312,12 @@ function Welcome() {
         }
 
         // @media (max-width: 991px) {
-        //   .feature-image-container {
+        //   .weclome-feature-image-container {
         //     width: 100%;
         //   }
         // }
 
-        .feature-image {
+        .weclome-feature-image {
           max-width: 85%;
           flex-grow: 1;
           // aspect-ratio: 1.75;
@@ -325,17 +325,17 @@ function Welcome() {
         }
 
         @media (max-width : 1279px){
-          .feature-image-container}{
+          .weclome-feature-image-container}{
             paddding-left : 0;
           }
 
-          .feature-image{
+          .weclome-feature-image{
             max-width : 100%;
           }
         }
 
         @media (max-width: 991px) {
-          .feature-image {
+          .weclome-feature-image {
             max-width: 100%;
             margin-top: 40px;
           }
@@ -345,4 +345,4 @@ function Welcome() {
   );
 }
 
-export default Welcome;
+export default WelcomePage;
