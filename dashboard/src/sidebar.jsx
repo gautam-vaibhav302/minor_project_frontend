@@ -1,16 +1,17 @@
 import * as React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function IconImage({ src, alt }) {
   return <img loading="lazy" src={src} alt={alt} className="sidebar-icon-image" />;
 }
 
-function SideMenuItem({ icon, label, onClick }) {
+function SideMenuItem({ icon, href, label }) {
   return (
-    <div className="side-menu-item" onClick={onClick}>
+    <Link to={`/${href}`} className="side-menu-item" style={{textDecoration: "none", color: "black"}} >
       <IconImage src={icon} alt="" />
       <div className="side-menu-label">{label}</div>
-    </div>
+    </Link>
   );
 } 
 
@@ -59,22 +60,22 @@ function SideBar() {
 
         <div className="sidehead" onClick={toggleSidebar}>
           <img src={"https://cdn.builder.io/api/v1/image/assets/TEMP/e97864e041db41bc26ee1f82706998cd3701f3dace2016e101fbca5f0d4cbf38?apiKey=185221ab61634e7baa33e5b4261af8f5&"} alt="" className="sidehead-logo" />
-          <div className="sidehead-label">ParkAI</div>
+          <Link to={"/"} style={{textDecoration:"none", color:"black"}} className="sidehead-label">ParkAI</Link>
         </div>
 
         <nav className={`sidebar ${isSidebarOpen ? "sidebar-open open" : ""}`}>
 
           <div className="sidebar-menu">
 
-            <SideMenuItem icon="logos/editProfile.png" label="Edit Profile" />
+            <SideMenuItem href="edit-profile" icon="logos/editProfile.png" label="Edit Profile" />
 
-            <SideMenuItem icon="logos/editParking.png" label="Edit Parking" />
+            <SideMenuItem href="edit-parking" icon="logos/editParking.png" label="Edit Parking" />
 
-            <SideMenuItem icon="logos/fillSlot.png" label="Fill Slot" />
+            <SideMenuItem href="fill-slot" icon="logos/fillSlot.png" label="Fill Slot" />
 
-            <SideMenuItem icon="logos/freeSlot.png" label="Free Slot" />
+            <SideMenuItem href="free-slot" icon="logos/freeSlot.png" label="Free Slot" />
 
-            <SideMenuItem icon="logos/viewParking.png" label="View Parking" />
+            <SideMenuItem href="view-parking" icon="logos/viewParking.png" label="View Parking" />
 
           </div>
 
