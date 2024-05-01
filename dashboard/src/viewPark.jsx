@@ -1,237 +1,51 @@
-import * as React from "react";
-import SideBar from "./sidebar";
+import React from 'react'
+import SideBar from './sidebar';
 
-function InputField({ label, value, onChange, inType, id }) {
-  return (
-    <>
-      <div className="own-profile-input-field">
-        <div className="input-label">
-          {label}
-        </div>
-        <div className="own-profile-input-value" >
-          <input type={inType} name={id} id={id} className="own-profile-input-box" />
-        </div>
-      </div>
-      <style jsx>{`
-        .own-profile-input-field {
-          width : max-content;
-          display: flex;
-          gap: 11px;
-        }
-        .input-label {
-          font-family: Manrope, sans-serif;
-          flex-grow: 1;
-          margin: auto 0;
-        }
-        .own-profile-input-value {
-          align-items : center;
-          border-radius: 5px;
-          background-color: #d9d9d9;
-          width: 12rem;
-          height: 2rem;
-        }
+import styles from "./viewPark.module.css";
 
-        .own-profile-input-box{
-          text-align : center;
-          background : transparent;
-          font-family : inherit;
-          font-size : inherit;
-          font-weight : inherit;
-          color : #000;
-          width : -webkit-fill-available;
-          height : -webkit-fill-available;
-          border-radius : 1px;
-        }
-
-        @media(max-width : 991px){
-          .own-profile-input-field{
-            margin : 5% auto;
-            width : 100%;
-          }
-        }
-      `}</style>
-    </>
-  );
+function ParkingSlot ({flag, index}) {
+  return <>
+  <span style={{
+    width: "3.5rem",
+     height: "3.5rem", 
+     color: !flag? "black" : "white",
+      background: flag ? "black" : "white",
+       border: flag ? "1px solid transparent" : "1px solid black",
+       borderRadius: "10px",
+       cursor: "pointer",
+       display: "flex",
+       alignItems: "center",
+       justifyContent: "center",
+       fontFamily: "monospace"
+       }}>
+        {index+1}
+       </span>
+  </>
 }
 
-function DocCards({ imgSrc, cardDesc, id }) {
+
+
+const ViewParking = () => {
+// demo data
+  const parkingStatus =  [false, false, false, false, true, true, false, false, false, true, false, true, true, true, true, false, false, false];
+  
   return (
     <>
-      <div className="own-profile-card-container">
-        <img src={imgSrc} alt="Profile Photo" className="own-profile-card-photo" />
-        <div className="own-profile-card-footer">
-          <div className="own-profile-card-desc">{cardDesc}</div>
-          <div className="own-profile-card-button">
-            <input type={"file"} name={id} id={id} hidden />
-            <label htmlFor={id} className="own-profile-submit-input">Upload</label>
-          </div>
-        </div>
-      </div>
-      <style jsx>{`
-        .own-profile-card-container {
-          align-self: flex-start;
-          align-items : flex-start;
-          display: flex;
-          width: 19.6rem;
-          max-width: 100%;
-          flex-direction: column;
-          font-size: 1.4rem;
-          text-align: center;
-          font-weight : 600;
-        }
-        @media (max-width: 991px) {
-          .own-profile-card-container {
-            margin-top: 40px;
-          }
-        }
-        .own-profile-card-photo {
-          aspect-ratio: 1.56;
-          object-fit: cover;
-          object-position: center;
-          width: 100%;
-          background : #f0f0f0;
-          border-radius : 10px;
-        }
-        .own-profile-card-footer {
-          display: flex;
-          margin : 5% auto;
-          gap: 1.25rem;
-        }
-        .own-profile-card-desc {
-          color: #fff;
-          font-family: Manrope, sans-serif;
-          flex-grow: 1;
-          margin: auto 0;
-        }
-        .own-profile-card-button {
-          font-family: Manrope, sans-serif;
-          border-radius: 5px;
-          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-          border: 3px solid #fff;
-          background-color: #f0f0f0;
-          color: #000;
-          white-space: nowrap;
-          padding: 6px 22px;
-          display : flex;
-          align-items : center;
-        }
-        @media (max-width: 991px) {
-          .own-profile-card-button {
-            white-space: initial;
-            padding: 0 20px;
-          }
-        }
-      `}</style>
-    </>
-  );
-}
-
-function AddressField(pos) {
-  return (
-    <>
-      <div className="own-profile-doc_info-extended-column">
-        <div className="country-own-profile-address-fields">
-          <div className="own-profile-address-field">
-            <div className="own-profile-address-label">Address</div>
-            <div className="own-profile-address-input" >
-              <textarea type="text" name="address" id="address" className="own-profile-input-box" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  )
-}
-
-function Profile() {
-  const inputFields = [
-    { label: "First Name", value: "", type: "text", id: "fname" },
-    { label: "Last Name", value: "", type: "text", id: "lname" },
-    { label: "Email ID", value: "", type: "email", id: "mailID" },
-  ];
-
-  return (
-    <>
-      <section className="dash-page">
-        <SideBar />
-        <div className="dash-container">
-          <h1 className="dash-title">Edit Profile</h1>
-          <div className="own-profile-form-container">
-          <div className="own-profile-form">
-              <div className="own-profile-input-fields">
-                {inputFields.map((field, index) => (
-                  <InputField
-                    key={index}
-                    label={field.label}
-                    value={field.value}
-                    onChange={() => { }}
-                    inType={field.type}
-                    id={field.id}
-                  />
-                ))}
-              </div>
-            <div className="own-profile-additional-info">
-              <div className="own-profile-info-columns">
-                <div className="own-profile-column">
-                  <div className="own-profile-column-fields">
-                    <div className="own-profile-phone-field">
-                      <div className="own-profile-phone-label">Phone</div>
-                      <div className="own-profile-input-value" >
-                        <div className="own-profile-input-value" >
-                          <input type="tel" name="phone" id="phone" className="own-profile-input-box" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="own-profile-city-field">
-                      <div className="own-profile-city-label">City</div>
-                      <div className="own-profile-input-value" >
-                        <input type="text" name="city" id="city" className="own-profile-input-box" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="own-profile-column">
-
-                  <div className="own-profile-doc_info-extended-column">
-                    <div className="own-profile-country-field">
-                      <div className="own-profile-country-label">Country</div>
-                      <div className="own-profile-input-value" >
-                        <input type="text" name="country" id="country" className="own-profile-input-box" />
-                      </div>
-                    </div>
-
-                    <div className="own-profile-state-field">
-                      <div className="state-label">State</div>
-                      <div className="own-profile-input-value" >
-                        <input type="text" name="state" id="state" className="own-profile-input-box" />
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <div className="own-profile-doc_info-extended-column">
-                    <div className="own-profile-address-field">
-                      <div className="own-profile-address-label">Address</div>
-                      <div className="own-profile-address-input" >
-                        <textarea type="text" name="address" id="address" className="own-profile-input-box" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div className="own-profile-doc-info">
-                <DocCards imgSrc={"images/addImage.png"} cardDesc={"Profile Photo"} id={"proPic"} />
-                <DocCards imgSrc={"images/addFile.png"} cardDesc={"ID Proof"} id="idProof" />
-                <div className="own-profile-submit-field">
-                  <button type={"submit"} className="own-profile-submit-input">Submit</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </section>
+          <h1 className="dash-title">View Parking</h1>
+       
+       <div className={styles.topContainer}>
+       <div className={styles.container}>
+                {
+                  parkingStatus.map((isBooked,index) => {
+                    return <ParkingSlot index={index} flag={isBooked} key={index} />
+                  } )
+                }
+             </div> 
+       </div>
+         
+       
+              
+ 
       <style jsx>{`
         .dash-page{
           width : fit-content;
@@ -652,7 +466,7 @@ function Profile() {
         }
       `}</style>
     </>
-  );
+  )
 }
 
-export default Profile;
+export default ViewParking;

@@ -70,16 +70,9 @@ function FeatureSection() {
 function WelcomePage() {
   return (
     <>
-      <section className="dash-page">
-        <SideBar />
-        <div className="own-welcome-container">
-          <div className="own-weclome-content-wrapper">
             <h1 className="own-welcome-heading">Welcome to ParkPoint!</h1>
             <WelcomeSection />
-            <FeatureSection />
-          </div>
-        </div>
-      </section>
+            <FeatureSection />       
       <style jsx>{`
         .dash-page{
           display : flex;

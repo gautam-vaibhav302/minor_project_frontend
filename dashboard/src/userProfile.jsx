@@ -152,8 +152,7 @@ function UserProfile() {
 
   return (
     <>
-      <section className="dash-page">
-        <SideBar />
+     
         <div className="dash-container">
           <h1 className="dash-title">Edit Profile</h1>
           <div className="own-profile-form-container">
@@ -231,19 +230,8 @@ function UserProfile() {
           </div>
           </div>
         </div>
-      </section>
+  
       <style jsx>{`
-        .dash-page{
-          width : fit-content;
-          display : flex;
-        }
-
-        @media (max-width : 767px){
-          .dash-page{
-            flex-direction : column;
-          }
-        }
-
         .dash-container {
           background-color: #fff;
           display: flex;
